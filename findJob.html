@@ -1,14 +1,16 @@
 <html>
-
-    <head>
+  <head>
         <link rel="stylesheet" href = "style2.css">
         <script src="search.js"></script>
         
-        <title>Find Job</title>
+        <title>Job Sharer - Home</title>
+        <link rel="stylesheet" href = "style2.css">
+        <script src="search.js"></script>
+        
+        <title>Home/Job Finder</title>
     </head>
     
     <body>
-        
         <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -22,26 +24,28 @@
           };
           firebase.initializeApp(config);
         </script>
-        
+        <p1>
+        Job Space
+        </p1>
         <p>What is your full name? </p>
         <input>
         <br><br>
         
         <p>I am looking for a:  </p>
-        <select id = "job">
+        <select>
             
-            <option value = "part">Part-time Job</option>
-            <option value = "full">Full-time Job</option>
+            <option>Part-time Job</option>
+            <option>Full-time Job</option>
             
         </select>
 
         
         <p>...at a: </p>
-        <select id = "type">
-            <option value = "restaurant">Restaurant</option>
-            <option value = "business">Business</option>
-            <option value = "retail">Retail Store</option>
-            <option value = "other">Other</option>
+        <select>
+            <option>Restaurant</option>
+            <option>Business</option>
+            <option>Retail Store</option>
+            <option>Other</option>
         </select>
         
         <br><br>
@@ -49,16 +53,9 @@
         <button>Submit</button>
         
         <script>
-            var type = document.querySelector("#type")
-            var job = document.querySelector("#job")
-            var submit = document.querySelector("button")
             database = firebase.database()
             reference = database.ref()
-            
-            submit.onclick = function() {
-                reference.push({ type: type.value, job: job.value })
-            }
-
         </script>
     </body>
 </html>
+
