@@ -1,0 +1,43 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href = "style2.css">
+        <script src="search.js"></script>
+        
+        <title>Home/Job Finder</title>
+    </head>
+    
+    <body>
+        
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAcNRUl0wLUloI0WJW4aAgoIRguljss4vc",
+            authDomain: "find-jobs-acf50.firebaseapp.com",
+            databaseURL: "https://find-jobs-acf50.firebaseio.com",
+            projectId: "find-jobs-acf50",
+            storageBucket: "",
+            messagingSenderId: "120370318343"
+          };
+          firebase.initializeApp(config);
+        </script>
+        
+        <p>What is your full name? </p>
+        <input>
+        <br><br>
+        
+        <p>I am looking for a:  </p>
+        <select>
+            
+            <option>Part-time Job</option>
+            <option>Full-time Job</option>
+            
+        </select>
+        
+        <script>
+            database = firebase.database()
+            reference = database.ref()
+        </script>
+    </body>
+</html>
