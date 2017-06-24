@@ -1,16 +1,14 @@
 <html>
-  <head>
+
+    <head>
         <link rel="stylesheet" href = "style2.css">
         <script src="search.js"></script>
         
-        <title>Job Sharer - Home</title>
-        <link rel="stylesheet" href = "style2.css">
-        <script src="search.js"></script>
-        
-        <title>Home/Job Finder</title>
+        <title>Find Job</title>
     </head>
     
     <body>
+        
         <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -24,38 +22,59 @@
           };
           firebase.initializeApp(config);
         </script>
-        <p1>
-        Job Space
-        </p1>
+        
         <p>What is your full name? </p>
-        <input>
+        <input id = "name" placeholder = "Enter name here: ">
         <br><br>
         
         <p>I am looking for a:  </p>
-        <select>
+        <select id = "job">
             
-            <option>Part-time Job</option>
-            <option>Full-time Job</option>
+            <option value = "part">Part-time Job</option>
+            <option value = "full">Full-time Job</option>
             
         </select>
 
         
         <p>...at a: </p>
-        <select>
-            <option>Restaurant</option>
-            <option>Business</option>
-            <option>Retail Store</option>
-            <option>Other</option>
+        <select id = "type">
+            <option value = "restaurant">Restaurant</option>
+            <option value = "business">Business</option>
+            <option value = "retail">Retail Store</option>
+            <option value = "other">Other</option>
         </select>
         
         <br><br>
     
         <button>Submit</button>
         
+        <p id="output"></p>
+        
         <script>
+            var type = document.querySelector("#type")
+            var job = document.querySelector("#job")
+            var submit = document.querySelector("button")
+            var name = document.querySelector("#name")
+            var output = document.querySelector('#output')
             database = firebase.database()
             reference = database.ref()
+            
+            submit.onclick = function() {
+                var html = ""
+                reference.on("value", function(jobs){
+                    jobs = jobs.val()
+                        document.write("Apply online for this job at www.application.com.")
+                        document.write("<br>")
+                        document.write("Phone: (111)111-1111")
+                        document.write("<br>")
+                        document.write("Email: email@gmail.com")
+                        console.log(jobs[jobKey].type)
+                    
+                    
+                    output.innerHTML = html
+                })
+            }
+
         </script>
     </body>
 </html>
-
