@@ -2,8 +2,13 @@ body {background-image: url("http://www.flc.losrios.edu/Images/DepartmentImages/
 }
 option {background-color: #0C57FF}
 option {color: #8A0D00}
+select{width: 300px}
+select{height: 30px}
 p {font-size: 30px}
 p {font-family: "Lucidas Console", Monospace}
 p {color: Black}
 p{font-weight: bold}
-input{width: 25%}
+input{width: 300px}
+input{height: 30px}
+p1{font-size: 75px}
+p1{font-weight: Bold}
