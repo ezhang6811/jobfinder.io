@@ -47,12 +47,11 @@
     
         <button>Submit</button>
         
-        <p id="output"></p>
         
-        <div id = "result"></div>
+        <p id = "result"></p>
         
         <script>
-            var output = "<p>hi</p>"
+            var output = "hi"
             var type = document.querySelector("#type")
             var job = document.querySelector("#job")
             var submit = document.querySelector("button")
@@ -62,7 +61,7 @@
             reference = database.ref()
             
             submit.onclick = function() {
-                   document.getElementById("result").innerHTML = output
+                   document.getElementById("result").innerHTML = "<div><p>Apply at application.com. <br> Phone: (111)111-1111 <br> Email: email@gmail.com</p></div>"
                    
             }
 
