@@ -60,9 +60,6 @@
             reference = database.ref()
             
             submit.onclick = function() {
-                var html = ""
-                reference.on("value", function(jobs){
-                    jobs = jobs.val()
                         document.write("Apply online for this job at www.application.com.")
                         document.write("<br>")
                         document.write("Phone: (111)111-1111")
@@ -70,9 +67,7 @@
                         document.write("Email: email@gmail.com")
                         console.log(jobs[jobKey].type)
                     
-                    
-                    output.innerHTML = html
-                })
+                }
             }
 
         </script>
